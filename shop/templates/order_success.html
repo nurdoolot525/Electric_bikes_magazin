@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <section class="checkout_top">
+        <div class="container" style="text-align: center; padding: 80px 0;">
+            <h1>СПАСИБО ЗА ЗАКАЗ!</h1>
+            <p>Номер вашего заказа: <strong>№{{ order.id }}</strong></p>
+            <p>Итого: <strong>{{ order.total }} ₽</strong></p>
+            <a href="{% url 'home' %}" style="color: #F57520;">Вернуться на главную</a>
+        </div>
+    </section>
+</main>
+{% endblock %}

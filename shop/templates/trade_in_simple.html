@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="breadcrumbs">
+            <a class="b" href="{% url 'home' %}">Главная</a> / <a class="b" href="{% url 'trade_in' %}">Trade-In</a> / <span>{{ title }}</span>
+        </div>
+        <h1 class="b">{{ title|upper }}</h1>
+    </div>
+
+    <section class="section5">
+        <div class="container">
+            <div class="tradein_form_wrap">
+                <form method="post" enctype="multipart/form-data" class="tradein_form">
+                    {% csrf_token %}
+                    <label>Название</label>
+                    <input type="text" name="name" required>
+
+                    <label>Цена</label>
+                    <input type="number" name="price" min="0" step="0.01" required>
+
+                    <label>Страна</label>
+                    <select name="country" required>
+                        {% for c in countries %}
+                        <option value="{{ c.id }}">{{ c.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    {% if action_url == 'trade_in_parts' or action_url == 'trade_in_equipment' %}
+                    <label>Бренд</label>
+                    <select name="brand">
+                        {% for b in brands %}
+                        <option value="{{ b.id }}">{{ b.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Цвет</label>
+                    <select name="color">
+                        {% for c in colors %}
+                        <option value="{{ c.id }}">{{ c.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% endif %}
+
+                    <label>Описание</label>
+                    <textarea name="description"></textarea>
+
+                    <label>Фото</label>
+                    <input type="file" name="image" required>
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

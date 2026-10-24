@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+
+{% block content %}
+<main>
+    <section class="section1">
+        <div class="container">
+            <div class="opisan">
+                <h1>Электро
+                    велосипеды</h1>
+                <div class="Cento10">
+                    <p>Cento10 Hybrid — это гоночный велосипед с помогающим
+                        педалированию электроприводом, который устанавливает новый,
+                        очень высокий стандарт для данной категории</p>
+                    <div class="knopka"><a href="">Подробнее</a></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="container">
+            <div class="cards">
+                <div class="card">
+                    <h3>Экстремальное вождение на горном велосипеде</h3>
+                    <a href="">Подробнее</a>
+                </div>
+                <div class="card">
+                    <h3>Велосипеды для профессионалов</h3>
+                </div>
+                <div class="card">
+                    <h3>Долгая поездка на шоссейном велосипеде</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section3">
+        <div class="container">
+            <div class="brands">
+                <img src="{% static 'images/spamm.svg' %}" alt="Wahoo">
+                <img src="{% static 'images/spamm.svg' %}" alt="Topeak">
+                <img src="{% static 'images/spamm.svg' %}" alt="SRAM">
+                <img src="{% static 'images/spamm.svg' %}" alt="SRAM">
+                <img src="{% static 'images/spamm.svg' %}" alt="SRAM">
+                <img src="{% static 'images/spamm.svg' %}" alt="SRAM">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section4">
+        <div class="container">
+            <h1 class="now">НОВИНКИ</h1>
+            <div class="slider_wrap">
+                <button class="prev">‹</button>
+                <div class="bikes_cards">
+                    <div class="bike_card">
+                        <div class="photo">
+                            <div class="count_">
+                                <span class="country">USA</span>
+                                <span class="status">В наличии</span>
+                            </div>
+                            <img src="{% static 'images/bike.svg' %}" alt="">
+                        </div>
+                        <div class="description_price">
+                            <p class="bike_name">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</p>
+                            <p class="bike_price">115 000 ₽</p>
+                        </div>
+                        <div class="buton_klik">
+                            <a href="" class="one_click"> В 1 клик</a>
+                        </div>
+                    </div>
+                    <div class="bike_card">
+                        <div class="photo">
+                            <div class="count_">
+                                <span class="country">USA</span>
+                                <span class="status">В наличии</span>
+                            </div>
+                            <img src="{% static 'images/bike.svg' %}" alt="">
+                        </div>
+                        <div class="description_price">
+                            <p class="bike_name">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</p>
+                            <p class="bike_price">115 000 ₽</p>
+                        </div>
+                        <div class="buton_klik">
+                            <a href="" class="one_click"> В 1 клик</a>
+                        </div>
+                    </div>
+                    <div class="bike_card">
+                        <div class="photo">
+                            <div class="count_">
+                                <span class="country">USA</span>
+                                <span class="status">В наличии</span>
+                            </div>
+                            <img src="{% static 'images/bike.svg' %}" alt="">
+                        </div>
+                        <div class="description_price">
+                            <p class="bike_name">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</p>
+                            <p class="bike_price">115 000 ₽</p>
+                        </div>
+                        <div class="buton_klik">
+                            <a href="" class="one_click"> В 1 клик</a>
+                        </div>
+                    </div>
+                    <div class="bike_card">
+                        <div class="photo">
+                            <div class="count_">
+                                <span class="country">USA</span>
+                                <span class="status">В наличии</span>
+                            </div>
+                            <img src="{% static 'images/bike.svg' %}" alt="">
+                        </div>
+                        <div class="description_price">
+                            <p class="bike_name">Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021</p>
+                            <p class="bike_price">115 000 ₽</p>
+                        </div>
+                        <div class="buton_klik">
+                            <a href="" class="one_click"> В 1 клик</a>
+                        </div>
+                    </div>
+
+                </div> 
+                <button class="next">›</button>
+            </div>   
+            <a href="http://127.0.0.1:8000/bikes/" class="show_all">ПОКАЗАТЬ ВСЕ</a>
+        </div>
+    </section>
+
+    <section class="section5">
+        <div class="container">
+            <h2>КАТАЛОГ</h2>
+            <div class="catalog_grid">
+                <div class="catalog_bike">
+                    <h3>ВЕЛОСИПЕДЫ</h3>
+                    <img src="{% static 'img/bike_catalog.png' %}" alt="">
+                </div>
+                <div class="catalog_bottom">
+                    <div class="trade">
+                        <h3>TRADE-IN</h3>
+                        <img src="{% static 'img/tradein.png' %}" alt="">
+                    </div>
+                    <div class="catalog_center">
+                        <div class="catalog_card">
+                            <h3>ЗАПЧАСТИ</h3>
+                            <img src="{% static 'img/zapchasti.png' %}" alt="">
+                        </div>
+                        <div class="catalog_card">
+                            <h3>АКСЕССУ</h3>
+                            <img src="{% static 'img/aksessuary.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="catalog_right">
+                        <div class="catalog_card">
+                            <h3>ЭКИПИРОВКА</h3>
+                            <img src="{% static 'img/ekipirovka.png' %}" alt="">
+                        </div>
+                        <div class="catalog_card">
+                            <h3>ВЕЛОСТАНКИ</h3>
+                            <img src="{% static 'img/velostanki.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section6">
+        <div class="container">
+            <div class="best_content">
+                <h2>ЛУЧШИЕ МОДЕЛИ ДЛЯ ЗИМНЕЙ ЕЗДЫ</h2>
+                <div class="best_cards">
+                    <div class="best_card">
+                        <div class="best_top">
+                            <span>🇮🇹</span>
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/bike.svg' %}" alt="">
+                        <p class="best_name">Bianchi ARCADEX GRX600 40 Синий 2022</p>
+                        <p class="best_price">351 890 ₽</p>
+                    </div>
+                    <div class="best_card">
+                        <div class="best_top">
+                            <span>🇺🇸</span>
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/bike.svg' %}" alt="">
+                        <p class="best_name">Trek Verve 1 Disc Low Step Era White HYBD 2022</p>
+                        <p class="best_price">77 300 ₽</p>
+                    </div>
+                    <div class="best_card">
+                        <div class="best_top">
+                            <span>🇺🇸</span>
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/bike.svg' %}" alt="">
+                        <p class="best_name">Trek Dual Sport 1 Quicksilver Hybrid 2022</p>
+                        <p class="best_price">78 000 ₽</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section7">
+        <div class="container">
+            <h2>ЭКИПИРОВКА</h2>
+            <div class="slider_wrap">
+                <button class="eq_prev">‹</button>
+                <div class="eq_cards">
+                    <div class="eq_card">
+                        <div class="eq_top">
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/helmet1.svg' %}" alt="">
+                        <p class="eq_name">Rudy Project Airstorm Lime Fluo White Shiny</p>
+                        <p class="eq_price">7 990 ₽ <span class="old_price">10 627 ₽</span></p>
+                        <div class="buton_klik">
+                            <a href="" class="one_click">🛒 В 1 клик</a>
+                        </div>
+                    </div>
+                    <div class="eq_card">
+                        <div class="eq_top">
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/helmet2.svg' %}" alt="">
+                        <p class="eq_name">Rudy Project Protera Blue Orange Matt</p>
+                        <p class="eq_price">9 420 ₽ <span class="old_price">13 520 ₽</span></p>
+                        <div class="buton_klik">
+                            <a href="" class="one_click">🛒 В 1 клик</a>
+                        </div>
+                    </div>
+                    <div class="eq_card">
+                        <div class="eq_top">
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/helmet3.svg' %}" alt="">
+                        <p class="eq_name">Rudy Project Avenger Titanium Lime Matt</p>
+                        <p class="eq_price">9 200 ₽ <span class="old_price">12 336 ₽</span></p>
+                        <div class="buton_klik">
+                            <a href="" class="one_click">🛒 В 1 клик</a>
+                        </div>
+                    </div>
+                    <div class="eq_card">
+                        <div class="eq_top">
+                            <span class="status_red">Распродано</span>
+                        </div>
+                        <img src="{% static 'images/helmet3.svg' %}" alt="">
+                        <p class="eq_name">Rudy Project Avenger Titanium Lime Matt</p>
+                        <p class="eq_price">9 200 ₽ <span class="old_price">12 336 ₽</span></p>
+                        <div class="buton_klik">
+                            <a href="" class="one_click">🛒 В 1 клик</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="eq_next">›</button>
+            </div>
+            <a href="" class="show_all">ПОКАЗАТЬ ВСЕ</a>
+        </div>
+    </section>
+
+    <section class="section8">
+    <div class="container">
+        <div class="newsletter_left">
+            <h2>ПОДПИШИТЕСЬ НА НАШИ НОВОСТИ</h2>
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="newsletter_form">
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <button type="submit">Подписаться</button>
+                </div>
+                <label class="checkbox_label">
+                    <input type="checkbox" required>
+                    Согласен(на) на обработку персональных данных
+                </label>
+            </form>
+        </div>
+        <div class="newsletter_img">
+            <img src="{% static 'images/newsletter_bike.png' %}" alt="">
+        </div>
+    </div>
+</section>  
+</main>
+{% endblock %}
+
+</html> 

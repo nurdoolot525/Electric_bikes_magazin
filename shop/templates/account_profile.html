@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/account.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<main>
+    <section class="account_section">
+        <div class="container">
+            <div class="account_grid">
+                <div class="account_sidebar">
+                    <h2>Мой аккаунт</h2>
+                    <nav class="account_nav">
+                        <a href="{% url 'account_orders' %}">История заказов</a>
+                        <a href="{% url 'account_profile' %}" class="active">Персональные данные</a>
+                        <a href="{% url 'account_password' %}">Смена пароля</a>
+                        <a href="{% url 'account_wishlist' %}">Список желаний</a>
+                        <a href="{% url 'logout' %}" class="account_logout">Выйти</a>
+                    </nav>
+                </div>
+
+                <div class="account_content">
+                    <h1>ПЕРСОНАЛЬНЫЕ ДАННЫЕ</h1>
+
+                    <form method="post" class="account_form">
+                        {% csrf_token %}
+
+                        <div class="account_form_row">
+                            <div class="account_field">
+                                <label>Имя</label>
+                                <input type="text" name="first_name" value="{{ request.user.first_name }}">
+                            </div>
+                            <div class="account_field">
+                                <label>Фамилия</label>
+                                <input type="text" name="last_name" value="{{ request.user.last_name }}">
+                            </div>
+                        </div>
+
+                        <div class="account_field">
+                            <label>Отображаемое имя</label>
+                            <input type="text" name="display_name" value="{{ profile.display_name|default:'' }}">
+                        </div>
+
+                        <div class="account_field">
+                            <label>E-mail</label>
+                            <input type="email" name="email" value="{{ request.user.email }}">
+                        </div>
+
+                        <div class="account_field">
+                            <label>Телефон</label>
+                            <input type="text" name="phone" value="{{ profile.phone|default:'' }}">
+                        </div>
+
+                        <div class="account_field">
+                            <label>Город</label>
+                            <input type="text" name="city" value="{{ profile.city|default:'' }}">
+                        </div>
+
+                        <div class="account_field">
+                            <label>Улица</label>
+                            <input type="text" name="street" value="{{ profile.street|default:'' }}">
+                        </div>
+
+                        <div class="account_form_row three_cols">
+                            <div class="account_field">
+                                <label>Дом</label>
+                                <input type="text" name="house" value="{{ profile.house|default:'' }}">
+                            </div>
+                            <div class="account_field">
+                                <label>Этаж</label>
+                                <input type="text" name="floor" value="{{ profile.floor|default:'' }}">
+                            </div>
+                            <div class="account_field">
+                                <label>Квартира</label>
+                                <input type="text" name="apartment" value="{{ profile.apartment|default:'' }}">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="account_save_btn">Изменить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

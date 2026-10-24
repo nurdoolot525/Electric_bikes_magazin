@@ -1,0 +1,124 @@
+{% load static %}
+
+<header>
+    <div class="container">
+        <div class="verh">
+            <div class="logo">
+                <img src="{% static 'images/logo.svg' %}" alt="">
+            </div>
+
+            <div class="menu">
+                <nav>
+                    <a class="trade" href="{% url 'trade_in' %}">TRADE IN</a>
+                    <div class="drop">
+                        <a class="bike" href="{% url 'bike_catalog' %}">Велосипед</a>
+                        <div class="dropdown_menu">
+                            <div class="category">
+                                <div class="vel">
+                                    {% for cat in categories|slice:":5" %}
+                                        <a href="{% url 'bike_catalog' %}?category={{ cat.id }}">{{ cat.name }}</a>
+                                    {% endfor %}
+                                </div>
+                                <div class="vel">
+                                    {% for cat in categories|slice:"5:" %}
+                                        <a href="{% url 'bike_catalog' %}?category={{ cat.id }}">{{ cat.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="spareparts" href="{% url 'parts_catalog' %}">Запчасти</a>
+                    <a class="equipment" href="{% url 'equipment_catalog' %}">Экипировка</a>
+                    <a class="accessorie" href="{% url 'accessories_catalog' %}">Аксессуары</a>
+                    <a class="bike_trainers" href="{% url 'bike_trainers_catalog' %}">Велостанки</a>
+                </nav>
+            </div>
+
+            <div class="icons">
+                <div class="search-wrap">
+                    <img src="{% static 'images/poisk.svg' %}" alt="">
+                    <input type="text" placeholder="Поиск" class="search_input">
+                </div>
+
+                {% if user.is_authenticated %}
+                <a href="{% url 'account_view' %}">
+                    <img src="{% static 'images/profile.svg' %}" alt="">
+                </a>
+                {% else %}
+                <a href="{% url 'register' %}">
+                    <img src="{% static 'images/profile.svg' %}" alt="">
+                </a>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <a href="{% url 'account_wishlist' %}">
+                    <img src="{% static 'images/selected.svg' %}" alt="">
+                </a>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <img src="{% static 'images/selected.svg' %}" alt="">
+                </a>
+                {% endif %}
+                
+                <a href="{% url 'cart_view' %}">
+                    <img src="{% static 'images/karzinka.svg' %}" alt="">
+                </a>
+            </div>
+
+            <img class="burger_icon" src="{% static 'images/burger.svg' %}" alt="">
+        </div>
+    </div>
+
+    <div class="burger-menu">
+        <div class="close_btn">×</div>
+        <h2>ДОП. ИНФОРМАЦИЯ</h2>
+        <nav>
+            <a href="">О нас</a>
+            <a href="">Веломастерская</a>
+            <a href="">Хранение</a>
+            <a class="garant" href="">Гарантии</a>
+            <a href="">Пользовательское соглашение</a>
+            <a href="">Доставка и оплата</a>
+            <a href="">Блог</a>
+            <a href="">Контакты</a>
+        </nav>
+    </div>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">×</div>
+        <nav class="mobile-nav">
+            <a href="{% url 'trade_in' %}" class="mobile-trade">TRADE IN</a>
+
+            <div class="mobile-item">
+                <div class="mobile-item-title">
+                    <span>Велосипеды</span>
+                    <span class="chevron">⌄</span>
+                </div>
+                <div class="mobile-submenu">
+                    {% for cat in categories %}
+                        <a href="{% url 'bike_catalog' %}?category={{ cat.id }}">{{ cat.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <a href="{% url 'parts_catalog' %}" class="mobile-trade">Запчасти</a>
+
+            <a href="{% url 'equipment_catalog' %}" class="mobile-trade">Экипировка</a>
+               
+
+            <a href="{% url 'accessories_catalog' %}" class="mobile-trade">Аксессуары</a>
+
+           <a href="{% url 'bike_trainers_catalog' %}" class="mobile-trade">Велостанки</a>
+
+            <a href="" class="mobile-info-link">О нас</a>
+            <a href="" class="mobile-info-link">Веломастерская</a>
+            <a href="" class="mobile-info-link">Хранение</a>
+            <a href="" class="mobile-info-link mobile-info-active">Гарантии</a>
+            <a href="" class="mobile-info-link">Пользовательское соглашение</a>
+            <a href="" class="mobile-info-link">Доставка и оплата</a>
+            <a href="" class="mobile-info-link">Блог</a>
+            <a href="" class="mobile-info-link">Контакты</a>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,223 @@
+.account_section {
+    padding: 40px 0 60px;
+    background: white;
+}
+
+.account_grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+}
+
+.account_sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.account_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.account_nav a {
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.account_nav a.active {
+    background: #F57520;
+    color: white;
+}
+
+.account_logout {
+    color: #ccc !important;
+    margin-top: 10px;
+}
+
+.account_content h1 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.account_form {
+    max-width: 700px;
+}
+
+.account_form_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.account_form_row.three_cols {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.account_field {
+    margin-bottom: 18px;
+}
+
+.account_field label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.account_field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fafafa;
+}
+
+.account_field input:focus {
+    outline: none;
+    border-color: #F57520;
+    background: white;
+}
+
+.account_save_btn {
+    background: #F57520;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.orders_list {
+    max-width: 700px;
+}
+
+.order_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order_row p {
+    color: #999;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.order_total {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.auth_error {
+    background: #fdecea;
+    color: #c0392b;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.auth_success {
+    background: #eafaf1;
+    color: #27ae60;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.order_card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    max-width: 700px;
+}
+
+.order_card_header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #999;
+}
+
+.order_product_row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.order_product_row img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.order_product_name {
+    font-size: 14px;
+}
+
+.order_card_footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+}
+
+.orders_table_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: #F57520;
+    color: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    max-width: 700px;
+    margin-bottom: 16px;
+}
+
+.wishlist_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.bike_card {
+    position: relative;
+}
+
+.wishlist_remove_form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+}
+
+.wishlist_remove_icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}

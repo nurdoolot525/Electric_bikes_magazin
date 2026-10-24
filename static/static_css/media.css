@@ -1,0 +1,718 @@
+@media (max-width: 580px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .menu {
+        .trade {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .menu {
+        .spareparts {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 730px) {
+    .menu {
+        .equipment {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 615px) {
+    .menu {
+        .equipment {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 890px) {
+    .menu {
+        .bike_trainers {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .menu {
+        .accessorie {
+            display: none;
+        }
+
+        .bike {
+            display: none;
+        }
+    }
+}
+
+
+
+
+@media (max-width: 950px) {
+    .section1 .opisan {
+        width: 100%;
+    }
+
+    .section1 .opisan h1 {
+        font-size: 12vw;
+    }
+
+    .section1 .opisan .Cento10 p {
+        font-size: 4vw;
+    }
+
+    .knopka {
+        width: auto;
+        padding: 12px 24px;
+    }
+}
+
+
+
+
+
+@media (max-width: 700px) {
+    .section6 .best_content {
+        flex-direction: column;
+    }
+
+    .section6 .best_content h2 {
+        min-width: 100%;
+        font-size: 28px;
+    }
+
+    .section6 .best_cards {
+        width: 100%;
+    }
+
+    .section6 .best_card {
+        min-width: 55vw;
+    }
+}
+
+
+
+@media (max-width: 700px) {
+    .section7 .eq_card {
+        width: calc(100vw - 40px);
+    }
+}
+
+
+@media (max-width: 800px) {
+    .bikes_cards .buton_klik {
+        display: block;
+    }
+
+    .bikes_cards .one_click {
+        display: block;
+    }
+}
+
+@media (max-width: 680px) {
+    footer .footer_top {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    footer .footer_col:nth-child(2),
+    footer .footer_col:nth-child(3) {
+        display: none;
+    }
+
+    footer .footer_logo {
+        max-width: 100%;
+    }
+
+    footer .footer_col p {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    footer .footer_bottom {
+        flex-direction: column-reverse;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .newsletter_form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .newsletter_form input {
+        width: 100%;
+    }
+
+    .newsletter_form button {
+        width: 100%;
+        width: 250px;
+    }
+}
+
+
+
+@media (max-width: 440px) {
+    footer {
+        .footer_col {
+            display: none;
+        }
+    }
+}
+
+
+
+
+@media (max-width: 562px) {
+    .products_top {
+        justify-content: space-between !important;
+        gap: 12px;
+    }
+
+    .sort_select {
+        flex: 1;
+    }
+
+    .filter_toggle_btn {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .filters_close {
+        display: block;
+        font-size: 32px;
+        text-align: right;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .filters_overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 1000;
+    }
+
+    .filters_overlay.active {
+        display: block;
+    }
+
+    .section2 .filters {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        width: 300px;
+        max-width: 85%;
+        height: 100%;
+        background: white;
+        z-index: 1001;
+        transition: left 0.3s;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .section2 .filters.active {
+        left: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .catalog_bike {
+        height: 140px;
+    }
+
+    .catalog_bike h3 {
+        font-size: 24px;
+    }
+
+    .catalog_bike img {
+        position: static;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .catalog_card h3 {
+        font-size: 15px;
+    }
+
+    .catalog_card img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .trade h3 {
+        font-size: 16px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .section5 .catalog_grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section5 .catalog_bike {
+        height: 160px;
+        min-width: 0;
+    }
+
+    .section5 .catalog_bike h3 {
+        font-size: 28px;
+    }
+
+    .section5 .catalog_bike img {
+        position: static;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .section5 .catalog_bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-height: none;
+    }
+
+    .section5 .trade {
+        width: 100%;
+        height: 140px;
+        min-width: 0;
+    }
+
+    .section5 .trade h3 {
+        font-size: 20px;
+    }
+
+    .section5 .catalog_bottom .catalog_center,
+    .section5 .catalog_bottom .catalog_right {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .section5 .catalog_bottom .catalog_center .catalog_card,
+    .section5 .catalog_bottom .catalog_right .catalog_card {
+        flex: 1;
+        height: 130px;
+        min-width: 0;
+    }
+
+    .section5 .catalog_card h3 {
+        font-size: 14px;
+    }
+
+    .section5 .catalog_card img,
+    .section5 .trade img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .bikes_cards .bike_card {
+        min-width: 85vw;
+    }
+
+    .best_cards .best_card {
+        min-width: 75vw;
+    }
+
+    .eq_cards .eq_card {
+        min-width: 75vw;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .section2 .products .products_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .section2 .products .products_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    .bike_card .buton_klik {
+        display: block;
+    }
+
+    .bike_card .one_click {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .section5 .tradein_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .section5 .tradein_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section5.tradein_landing {
+        margin-top: -40px;
+    }
+
+    .section5.tradein_landing .container {
+        padding: 16px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .detail_top {
+        padding: 15px 0 30px;
+    }
+
+    .breadcrumbs {
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+
+    .detail_grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .detail_gallery {
+        order: 1;
+    }
+
+    .detail_info {
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .detail_info h1 {
+        font-size: 18px;
+    }
+
+    .detail_brand {
+        margin-bottom: 4px;
+    }
+
+    .detail_article {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .gallery_main {
+        height: 240px;
+    }
+
+    .thumb {
+        width: 60px;
+        height: 60px;
+    }
+
+    .detail_price {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .detail_desc_short {
+        margin-bottom: 20px;
+    }
+
+    .option_buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .size_btn {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .detail_actions {
+        flex-wrap: wrap;
+    }
+
+    .qty_selector {
+        order: 1;
+    }
+
+    .wishlist_btn {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .add_to_cart {
+        order: 3;
+        flex: 1 1 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail_info h1 {
+        font-size: 16px;
+    }
+
+    .gallery_main {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .option_colors {
+        flex-wrap: wrap;
+    }
+
+    .color_dot {
+        width: 24px;
+        height: 24px;
+    }
+
+    .detail_top .container {
+        overflow-x: hidden;
+    }
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .cart_top h1 {
+        font-size: 26px;
+    }
+
+    .cart_grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cart_row {
+        grid-template-columns: 90px 1fr;
+        grid-template-areas:
+            "photo name"
+            "photo actions";
+        gap: 10px 15px;
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .cart_item_photo {
+        grid-area: photo;
+    }
+
+    .cart_item_photo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cart_item_name {
+        grid-area: name;
+    }
+
+    .cart_item_name a {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .cart_qty_form {
+        grid-area: actions;
+    }
+
+    .cart_item_price {
+        grid-area: actions;
+        justify-self: end;
+        align-self: end;
+        font-size: 16px;
+    }
+
+    .cart_qty_form {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .cart_remove {
+        position: absolute;
+        top: 15px;
+        right: 0;
+    }
+
+    .cart_summary {
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .checkout_top h1 {
+        font-size: 26px;
+    }
+
+    .checkout_grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .checkout_form_row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .checkout_form_row:has(input[name="house"]) {
+        flex-direction: row;
+    }
+
+    .checkout_summary {
+        grid-column: 1;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .account_grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .account_sidebar {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+    }
+
+    .account_nav {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .account_nav a {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .account_nav a.active {
+        background: none;
+        color: #F57520;
+        font-weight: 600;
+    }
+
+    .account_content h1 {
+        font-size: 20px;
+    }
+
+    .account_form_row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .account_form_row.three_cols {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .order_row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .orders_table_header {
+        display: none;
+    }
+
+    .order_card {
+        padding: 12px;
+    }
+
+    .order_product_row img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .order_product_name {
+        font-size: 13px;
+    }
+
+    .order_card_header,
+    .order_card_footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 850px) {
+    .wishlist_grid .buton_klik {
+        display: block;
+    }
+
+    .wishlist_grid .one_click {
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wishlist_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .wishlist_grid .buton_klik {
+        display: block;
+    }
+
+    .wishlist_grid .one_click {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist_grid {
+        grid-template-columns: 1fr;
+    }
+}

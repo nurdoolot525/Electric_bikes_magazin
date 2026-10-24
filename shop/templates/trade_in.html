@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="breadcrumbs">
+            <a class="b" href="{% url 'home' %}">Главная</a>    
+        </div>
+            <h1 class="b">TRADE-IN</h1>
+        </div>
+
+    <section class="section5 tradein_landing">
+        <div class="container">
+            <h2>Что вы хотите продать?</h2>
+            <div class="tradein_grid">
+                <a href="{% url 'trade_in_bike' %}" class="tradein_card">
+                    <h3>ВЕЛОСИПЕД</h3>
+                </a>
+                <a href="{% url 'trade_in_parts' %}" class="tradein_card">
+                    <h3>ЗАПЧАСТИ</h3>
+                </a>
+                <a href="{% url 'trade_in_equipment' %}" class="tradein_card">
+                    <h3>ЭКИПИРОВКА</h3>
+                </a>
+                <a href="{% url 'trade_in_accessories' %}" class="tradein_card">
+                    <h3>АКСЕССУАРЫ</h3>
+                </a>
+                <a href="{% url 'trade_in_bike_trainers' %}" class="tradein_card">
+                    <h3>ВЕЛОСТАНКИ</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

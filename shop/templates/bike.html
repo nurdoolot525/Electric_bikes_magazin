@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/bike.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<main>
+
+    <section class="section1">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="{% url 'home' %}">Главная</a> / <span>Горные велосипеды</span>
+            </div>
+            <h1>ГОРНЫЕ ВЕЛОСИПЕДЫ</h1>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="container">
+            <form method="get" class="filters">
+                <div class="filters_close">×</div>
+                <div class="filter_stock">
+                    <span>Только в наличии</span>
+                    <label class="switch">
+                        <input type="checkbox" name="in_stock" value="1" onchange="this.form.submit()" {% if request.GET.in_stock %}checked{% endif %}>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="filter_block">
+                    <div class="filter_title">
+                        <h3>Категории товара</h3>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="filter_content">
+                        {% for cat in categories %}
+                        <label>
+                            <input type="checkbox" name="category" value="{{ cat.id }}" onchange="uncheckOthers(this)"
+                                {% if request.GET.category == cat.id|stringformat:"s" %}checked{% endif %}>
+                            {{ cat.name }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="filter_block">
+                    <div class="filter_title">
+                        <h3>Цена</h3>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="filter_content">
+                        <input type="range" min="0" max="1137900" class="price_range">
+                        <div class="price_inputs">
+                        <input type="number" name="min_price" value="{{ request.GET.min_price|default:'0' }}" placeholder="От">
+                        <span>-</span>
+                        <input type="number" name="max_price" value="{{ request.GET.max_price|default:'1137900' }}" placeholder="До">
+                    </div>
+                    <button type="submit" class="apply_price">Искать</button>
+                    </div>
+                </div>
+
+                <div class="filter_block">
+                    <div class="filter_title">
+                        <h3>Бренд</h3>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="filter_content">
+                        {% for b in brands %}
+                        <label>
+                            <input type="checkbox" name="brand" value="{{ b.id }}" onchange="uncheckOthers(this)" {% if request.GET.brand == b.id|stringformat:"s" %}checked{% endif %}>
+                            {{ b.name }}
+                        </label>
+                        {% endfor %}
+                        <a href="" class="show_more">Показать ещё</a>
+                    </div>
+                </div>
+
+                <div class="filter_block">
+                    <div class="filter_title">
+                        <h3>Материал рамы</h3>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="filter_content">
+                        {% for fm in frame_materials %}
+                        <label>
+                            <input type="checkbox" name="frame_material" value="{{ fm.id }}" onchange="uncheckOthers(this)" {% if request.GET.frame_material == fm.id|stringformat:"s" %}checked{% endif %}>
+                            {{ fm.name }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="filter_block">
+                    <div class="filter_title">
+                        <h3>Цвет</h3>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="filter_content color_grid">
+                        {% for c in colors %}
+                        <label>
+                            <input type="checkbox" name="color" value="{{ c.id }}" onchange="uncheckOthers(this)" style="display:none" {% if request.GET.color == c.id|stringformat:"s" %}checked{% endif %}>
+                            <span class="color_dot" style="background:{{ c.hex_code }}"></span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <a href="{% url 'bike_catalog' %}" class="reset_filters">Сбросить фильтры</a>
+            </form>
+
+            <div class="products">
+               <div class="products_top">
+                    <select class="sort_select" onchange="changeSort(this.value)">
+                        <option value="new" {% if request.GET.sort == "new" or not request.GET.sort %}selected{% endif %}>Сортировка от последнего</option>
+                        <option value="old" {% if request.GET.sort == "old" %}selected{% endif %}>Сортировка от старого</option>
+                    </select>
+                    <div class="filter_toggle_btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 5h18M6 12h12M10 19h4" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="filters_overlay"></div>
+                <div class="products_grid">
+                    {% for bike in bikes %}
+                    <div class="bike_card">
+                        <a href="{% url 'bike_detail' bike.id %}" class="card_link">
+                            <div class="photo">
+                                <div class="count_">
+                                    <span class="country">{{ bike.country.name }}</span>
+                                    {% if bike.in_stock %}
+                                    <span class="status">В наличии</span>
+                                    {% else %}
+                                    <span class="status_red">Распродано</span>
+                                    {% endif %}
+                                </div>
+                                <img src="{{ bike.image.url }}" alt="{{ bike.name }}">
+                            </div>
+                            <div class="description_price">
+                                <p class="bike_name">{{ bike.name }}</p>
+                                <p class="bike_price">{{ bike.price }} ₽</p>
+                            </div>
+                        </a>
+                        <div class="buton_klik">
+                            <a href="{% url 'bike_detail' bike.id %}" class="one_click">🛒 В 1 клик</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if page_obj.has_other_pages %}
+                <div class="pagination">
+                    {% if page_obj.has_previous %}
+                        <a href="?{{ request.GET.urlencode }}&page=1" class="page_arrow">«</a>
+                        <a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}" class="page_arrow">‹</a>
+                    {% else %}
+                        <span class="page_arrow disabled">«</span>
+                        <span class="page_arrow disabled">‹</span>
+                    {% endif %}
+
+                    {% for num in page_range %}
+                        {% if num == page_obj.paginator.ELLIPSIS %}
+                            <span>...</span>
+                        {% elif num == page_obj.number %}
+                            <a href="?{{ request.GET.urlencode }}&page={{ num }}" class="page_num active">{{ num }}</a>
+                        {% else %}
+                            <a href="?{{ request.GET.urlencode }}&page={{ num }}" class="page_num">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}" class="page_arrow">›</a>
+                        <a href="?{{ request.GET.urlencode }}&page={{ page_obj.paginator.num_pages }}" class="page_arrow">»</a>
+                    {% else %}
+                        <span class="page_arrow disabled">›</span>
+                        <span class="page_arrow disabled">»</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

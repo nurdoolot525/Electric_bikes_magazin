@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/bike_detail.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<main>
+    <section class="detail_top">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="{% url 'home' %}">Главная</a> /
+                <a href="{% url 'equipment_catalog' %}">Оборудование</a> /
+                <span>{{ item.name }}</span>
+            </div>
+
+            <div class="detail_grid">
+                <div class="detail_gallery">
+                    <div class="gallery_main">
+                        <img id="mainImage" src="{{ item.image.url }}" alt="{{ item.name }}">
+                    </div>
+                </div>
+
+                <div class="detail_info">
+                    <h1>{{ item.name }}</h1>
+                    {% if item.brand %}<p class="detail_brand">{{ item.brand.name }}</p>{% endif %}
+                    <p class="detail_article">Артикул: {{ item.id }}</p>
+
+                    {% if item.in_stock %}
+                        <p class="detail_stock in_stock">В наличии</p>
+                    {% else %}
+                        <p class="detail_stock out_stock">Распродано</p>
+                    {% endif %}
+
+                    <p class="detail_price">{{ item.price }} ₽</p>
+                    <p class="detail_desc_short">{{ item.description|truncatewords:20 }}</p>
+
+                    {% if item.size %}
+                    <div class="detail_option">
+                        <h3>Размер:</h3>
+                        <div class="option_buttons">
+                            <button class="size_btn active">{{ item.size }}</button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if item.color %}
+                    <div class="detail_option">
+                        <h3>Цвет:</h3>
+                        <div class="option_colors">
+                            <span class="color_dot active" style="background:{{ item.color.hex_code }}" title="{{ item.color.name }}"></span>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="detail_actions">
+                        <div class="qty_selector">
+                            <button onclick="changeQty(-1)">−</button>
+                            <span id="qtyValue">1</span>
+                            <button onclick="changeQty(1)">+</button>
+                        </div>
+                        <a href="{% url 'add_to_cart' 'equipment' item.id %}" class="add_to_cart">В корзину</a>
+                        <form method="post" action="{% url 'toggle_wishlist' 'equipment' item.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" class="wishlist_btn">
+                                {% if item.id in wishlist_ids %}♥{% else %}♡{% endif %}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail_description">
+        <div class="container">
+            <h2>ОПИСАНИЕ</h2>
+            <p>{{ item.description }}</p>
+        </div>
+    </section>
+
+    {% if similar_items %}
+    <section class="similar_products">
+        <div class="container">
+            <h2>ПОХОЖИЕ ТОВАРЫ</h2>
+            <div class="slider_wrap">
+                <button class="similar_prev">‹</button>
+                <div class="similar_cards">
+                    {% for s in similar_items %}
+                    <a href="{% url 'equipment_detail' s.id %}" class="bike_card card_link">
+                        <div class="photo">
+                            <div class="count_">
+                                <span class="country">{{ s.country.name }}</span>
+                                {% if s.in_stock %}<span class="status">В наличии</span>{% else %}<span class="status_red">Распродано</span>{% endif %}
+                            </div>
+                            <img src="{{ s.image.url }}" alt="{{ s.name }}">
+                        </div>
+                        <div class="description_price">
+                            <p class="bike_name">{{ s.name }}</p>
+                            <p class="bike_price">{{ s.price }} ₽</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                <button class="similar_next">›</button>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+</main>
+{% endblock %}

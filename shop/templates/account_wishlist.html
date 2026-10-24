@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/account.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/bike.css' %}">
+<main>
+    <section class="account_section">
+        <div class="container">
+            <div class="account_grid">
+                <div class="account_sidebar">
+                    <h2>Мой аккаунт</h2>
+                    <nav class="account_nav">
+                        <a href="{% url 'account_orders' %}">История заказов</a>
+                        <a href="{% url 'account_profile' %}">Персональные данные</a>
+                        <a href="{% url 'account_password' %}">Смена пароля</a>
+                        <a href="{% url 'account_wishlist' %}" class="active">Список желаний</a>
+                        <a href="{% url 'logout' %}" class="account_logout">Выйти</a>
+                    </nav>
+                </div>
+
+                <div class="account_content">
+                <h1>СПИСОК ЖЕЛАНИЙ</h1>
+
+                {% if items %}
+                <div class="wishlist_grid">
+                    {% for entry in items %}
+                    <div class="bike_card">
+                        <form method="post" action="{% url 'toggle_wishlist' entry.type entry.obj.id %}" class="wishlist_remove_form">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{% url 'account_wishlist' %}">
+                            <button type="submit" class="wishlist_remove_icon">×</button>
+                        </form>
+                        <a href="{% url entry.detail_url entry.obj.id %}" class="card_link">
+                            <div class="photo">
+                                <div class="count_">
+                                    <span class="country">{{ entry.obj.country.name }}</span>
+                                    {% if entry.obj.in_stock %}
+                                    <span class="status">В наличии</span>
+                                    {% else %}
+                                    <span class="status_red">Распродано</span>
+                                    {% endif %}
+                                </div>
+                                <img src="{{ entry.obj.image.url }}" alt="{{ entry.obj.name }}">
+                            </div>
+                            <div class="description_price">
+                                <p class="bike_name">{{ entry.obj.name }}</p>
+                                <p class="bike_price">{{ entry.obj.price }} ₽</p>
+                            </div>
+                        </a>
+                        <div class="buton_klik">
+                            <a href="{% url entry.detail_url entry.obj.id %}" class="one_click">🛒 В 1 клик</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p>Список желаний пока пуст.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

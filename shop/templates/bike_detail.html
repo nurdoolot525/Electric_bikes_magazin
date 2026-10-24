@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/bike_detail.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<main>
+    <section class="detail_top">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="{% url 'home' %}">Главная</a> /
+                <a href="{% url 'bike_catalog' %}">Велосипеды</a> /
+                <a href="{% url 'bike_catalog' %}?category={{ bike.category.id }}">{{ bike.category.name }}</a> /
+                <span>{{ bike.name }}</span>
+            </div>
+
+            <div class="detail_grid">
+                <div class="detail_gallery">
+                    <div class="gallery_main">
+                        <img id="mainImage" src="{{ bike.image.url }}" alt="{{ bike.name }}">
+                    </div>
+                    {% if bike.images.all %}
+                    <div class="gallery_thumbs">
+                        <button class="gallery_prev">‹</button>
+                        <div class="thumbs_track">
+                            <img class="thumb active" src="{{ bike.image.url }}" onclick="setMainImage(this)">
+                            {% for img in bike.images.all %}
+                            <img class="thumb" src="{{ img.image.url }}" onclick="setMainImage(this)">
+                            {% endfor %}
+                        </div>
+                        <button class="gallery_next">›</button>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="detail_info">
+                    <h1>{{ bike.name }}</h1>
+                    <p class="detail_brand">{{ bike.brand.name }}</p>
+                    <p class="detail_article">Артикул: {{ bike.id }}</p>
+
+                    {% if bike.in_stock %}
+                        <p class="detail_stock in_stock">В наличии</p>
+                    {% else %}
+                        <p class="detail_stock out_stock">Распродано</p>
+                    {% endif %}
+
+                    <p class="detail_price">{{ bike.price }} ₽</p>
+
+                    <p class="detail_desc_short">{{ bike.description|truncatewords:20 }}</p>
+
+                    <div class="detail_option">
+                        <h3>Размер:</h3>
+                        <div class="option_buttons">
+                            {% for s in sizes %}
+                            <button class="size_btn {% if s == bike.size %}active{% endif %}" onclick="selectOption(this)">{{ s }}</button>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="detail_option">
+                        <h3>Цвет:</h3>
+                        <div class="option_colors">
+                            {% for c in colors %}
+                            <span class="color_dot {% if bike.color_id == c.id %}active{% endif %}" style="background:{{ c.hex_code }}" onclick="selectOption(this)"></span>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="detail_actions">
+                        <div class="qty_selector">
+                            <button onclick="changeQty(-1)">−</button>
+                            <span id="qtyValue">1</span>
+                            <button onclick="changeQty(1)">+</button>
+                        </div>
+                        <a href="{% url 'add_to_cart' 'bike' bike.id %}" class="add_to_cart">В корзину</a>
+                        <form method="post" action="{% url 'toggle_wishlist' 'bike' bike.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" class="wishlist_btn">
+                                {% if bike.id in wishlist_ids %}♥{% else %}♡{% endif %}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail_description">
+        <div class="container">
+            <h2>ХАРАКТЕРИСТИКИ</h2>
+            <p>{{ bike.description }}</p>
+
+            <table class="specs_table">
+                {% if bike.frame_material %}<tr><td>Материал рамы</td><td>{{ bike.frame_material.name }}</td></tr>{% endif %}
+                {% if bike.wheel_diameter %}<tr><td>Диаметр колеса</td><td>{{ bike.wheel_diameter }}</td></tr>{% endif %}
+                {% if bike.tires %}<tr><td>Покрышки</td><td>{{ bike.tires }}</td></tr>{% endif %}
+                {% if bike.fork %}<tr><td>Вилка</td><td>{{ bike.fork }}</td></tr>{% endif %}
+                {% if bike.brakes_type %}<tr><td>Тип тормозов</td><td>{{ bike.brakes_type }}</td></tr>{% endif %}
+                {% if bike.brake_system %}<tr><td>Тормозная система</td><td>{{ bike.brake_system }}</td></tr>{% endif %}
+                {% if bike.speeds %}<tr><td>Количество скоростей</td><td>{{ bike.speeds }}</td></tr>{% endif %}
+                {% if bike.warranty %}<tr><td>Гарантия</td><td>{{ bike.warranty }}</td></tr>{% endif %}
+            </table>
+        </div>
+    </section>
+</main>
+
+
+{% endblock %}

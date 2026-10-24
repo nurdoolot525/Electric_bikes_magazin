@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/auth.css' %}">
+<main>
+    <section class="auth_section">
+        <div class="container">
+            <div class="auth_form_wrap">
+                <h1>ВХОД</h1>
+
+                {% if error %}
+                <p class="auth_error">{{ error }}</p>
+                {% endif %}
+
+                <form method="post" class="auth_form">
+                    {% csrf_token %}
+
+                    <label>Логин</label>
+                    <input type="text" name="username" required>
+
+                    <label>Пароль</label>
+                    <input type="password" name="password" required>
+
+                    <button type="submit">Войти</button>
+                </form>
+
+                <p class="auth_switch">Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

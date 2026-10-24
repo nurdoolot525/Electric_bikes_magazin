@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<main>
+    <section class="checkout_top">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="{% url 'home' %}">Главная</a> / <span>Оформление заказа</span>
+            </div>
+            <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
+
+            <form method="post" action="{% url 'place_order' %}" class="checkout_grid">
+                {% csrf_token %}
+
+                <div class="checkout_col">
+                    <h2>1 ДЕТАЛИ ОПЛАТЫ</h2>
+                    <div class="checkout_form_row">
+                        <input type="text" name="first_name" placeholder="Имя*" required>
+                        <input type="text" name="last_name" placeholder="Фамилия*" required>
+                    </div>
+                    <div class="checkout_form_row">
+                        <input type="text" name="city" placeholder="Город*" required>
+                        <input type="text" name="street" placeholder="Улица*" required>
+                    </div>
+                    <div class="checkout_form_row">
+                        <input type="text" name="house" placeholder="Дом*" required>
+                        <input type="text" name="apartment" placeholder="Кв.">
+                    </div>
+                    <div class="checkout_form_row">
+                        <input type="tel" name="phone" placeholder="Телефон*" required>
+                        <input type="email" name="email" placeholder="E-mail*" required>
+                    </div>
+                    <textarea name="comment" placeholder="Комментарий к заказу"></textarea>
+                </div>
+
+                <div class="checkout_col">
+                    <h2>2 ДЕТАЛИ ДОСТАВКИ</h2>
+
+                    <h3>Способ доставки</h3>
+                    <label class="radio_row">
+                        <input type="radio" name="delivery" value="courier" checked>
+                        Курьерская доставка
+                    </label>
+                    <label class="radio_row">
+                        <input type="radio" name="delivery" value="pickup">
+                        Самовывоз
+                    </label>
+
+                    <h3>Способ оплаты</h3>
+                    <label class="radio_row">
+                        <input type="radio" name="payment" value="online" checked>
+                        Оплата онлайн, на сайте
+                    </label>
+                    <label class="radio_row">
+                        <input type="radio" name="payment" value="card_courier">
+                        Оплата курьеру картой
+                    </label>
+                    <label class="radio_row">
+                        <input type="radio" name="payment" value="cash_courier">
+                        Оплата курьеру наличными
+                    </label>
+                    <label class="radio_row">
+                        <input type="radio" name="payment" value="in_store">
+                        Оплата в магазине
+                    </label>
+                </div>
+
+                <div class="checkout_summary">
+                    <h2>3 ВАШ ЗАКАЗ</h2>
+
+                    <div class="checkout_items_list">
+                        {% for entry in items %}
+                        <div class="checkout_item_row">
+                            <span>{{ entry.obj.name }} x{{ entry.qty }}</span>
+                            <span>{{ entry.subtotal }} ₽</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="checkout_total_row">
+                        <span>Итого {{ items|length }} товар(а)</span>
+                        <span>{{ total }} ₽</span>
+                    </div>
+
+                    <button type="submit" class="confirm_order_btn">Подтвердить заказ</button>
+
+                    <p class="checkout_note">
+                        Ваши личные данные будут использованы для обработки вашего заказа.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

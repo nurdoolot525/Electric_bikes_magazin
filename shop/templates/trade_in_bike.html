@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="breadcrumbs">
+            <a class="b" href="{% url 'home' %}">Главная</a> / <a class="b" href="{% url 'trade_in' %}">Trade-In</a> / <span>Велосипед</span>
+        </div>
+        <h1 class="pb">ПРОДАТЬ ВЕЛОСИПЕД</h1>
+    </div>
+
+    <section class="section5">
+        <div class="container">
+            <div class="tradein_form_wrap">
+                <form method="post" enctype="multipart/form-data" class="tradein_form">
+                    {% csrf_token %}
+
+                    <label>Название</label>
+                    <input type="text" name="name" required>
+
+                    <label>Категория</label>
+                    <select name="category" required>
+                        {% for cat in categories %}
+                        <option value="{{ cat.id }}">{{ cat.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Страна</label>
+                    <select name="country" required>
+                        {% for c in countries %}
+                        <option value="{{ c.id }}">{{ c.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Бренд</label>
+                    <select name="brand" required>
+                        {% for b in brands %}
+                        <option value="{{ b.id }}">{{ b.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Цена</label>
+                    <input type="number" name="price" min="0" step="0.01" required>
+
+                    <label>Цвет</label>
+                    <select name="color">
+                        {% for c in colors %}
+                        <option value="{{ c.id }}">{{ c.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Размер</label>
+                    <input type="text" name="size">
+
+                    <label>Год выпуска</label>
+                    <input type="date" name="year">
+
+                    <label>Диаметр колеса</label>
+                    <input type="number" step="0.01" name="wheel_diameter">
+
+                    <label>Материал рамы</label>
+                    <select name="frame_material">
+                        {% for fm in frame_materials %}
+                        <option value="{{ fm.id }}">{{ fm.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label>Покрышки</label>
+                    <input type="text" name="tires">
+
+                    <label>Вилка</label>
+                    <input type="text" name="fork">
+
+                    <label>Тип тормозов</label>
+                    <input type="text" name="brakes_type">
+
+                    <label>Тормозная система</label>
+                    <input type="text" name="brake_system">
+
+                    <label>Количество скоростей</label>
+                    <input type="number" name="speeds">
+
+                    <label>Гарантия</label>
+                    <input type="text" name="warranty">
+
+                    <label>Описание</label>
+                    <textarea name="description"></textarea>
+
+                    <label>Фото</label>
+                    <input type="file" name="image" required>
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

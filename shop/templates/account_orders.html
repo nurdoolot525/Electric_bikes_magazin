@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'static_css/account.css' %}">
+<link rel="stylesheet" href="{% static 'static_css/media.css' %}">
+<main>
+    <section class="account_section">
+        <div class="container">
+            <div class="account_grid">
+                <div class="account_sidebar">
+                    <h2>Мой аккаунт</h2>
+                    <nav class="account_nav">
+                        <a href="{% url 'account_orders' %}" class="active">История заказов</a>
+                        <a href="{% url 'account_profile' %}">Персональные данные</a>
+                        <a href="{% url 'account_password' %}">Смена пароля</a>
+                        <a href="{% url 'account_wishlist' %}">Список желаний</a>
+                        <a href="{% url 'logout' %}" class="account_logout">Выйти</a>
+                    </nav>
+                </div>
+
+                <div class="account_content">
+                    <h1>ИСТОРИЯ ЗАКАЗОВ</h1>
+
+                    {% if orders_data %}
+                    <div class="orders_table_header">
+                        <span>Дата</span>
+                        <span>Номер заказа</span>
+                        <span>Сумма заказа</span>
+                        <span>Статус</span>
+                    </div>
+                    <div class="orders_list">
+                        {% for data in orders_data %}
+                        <div class="order_card">
+                            <div class="order_card_header">
+                                <span>{{ data.order.created_at|date:"d.m.Y" }}</span>
+                                <span>№{{ data.order.id }}</span>
+                            </div>
+                            <div class="order_products">
+                                {% for item in data.items %}
+                                <div class="order_product_row">
+                                    {% if item.image %}
+                                    <img src="{{ item.image }}" alt="{{ item.name }}">
+                                    {% endif %}
+                                    <span class="order_product_name">{{ item.name }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="order_card_footer">
+                                <span>Итого</span>
+                                <span class="order_total">{{ data.order.total }} ₽</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p>У вас пока нет заказов.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
