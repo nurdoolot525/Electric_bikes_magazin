@@ -1,0 +1,519 @@
+main {
+    background-color: white;
+}
+
+.breadcrumbs {
+    color: #cccccc;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.breadcrumbs a {
+    color: #cccccc;
+}
+
+.about_hero {
+    background-image: url("../img/Rectangle 166.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #111111;
+    padding: 35px 0 60px;
+}
+
+.about_hero h1 {
+    color: white;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.about_intro {
+    padding: 70px 0;
+}
+
+.about_intro h2 {
+    font-size: 46px;
+    line-height: 1.15;
+    max-width: 780px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.orange {
+    color: #F57520;
+}
+
+.intro_cards {
+    display: flex;
+    gap: 20px;
+}
+
+.intro_card {
+    flex: 1;
+    background-color: #1A1A1A;
+    color: white;
+    padding: 30px;
+}
+
+.intro_card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.intro_card p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.intro_card a {
+    color: #F57520;
+    font-size: 14px;
+}
+
+.about_story {
+    background-color: #0D0D0D;
+    display: flex;
+}
+
+.about_story .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.bike_man {
+    width: 962px;
+    height: 695px;
+}
+
+.about_story h2 {
+    color: white;
+    font-size: 44px;
+    line-height: 1.2;
+    max-width: 640px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.about_story p {
+    color: #b5b5b5;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 15px;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.socials a {
+    width: 42px;
+    height: 42px;
+    background-color: #222222;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_world {
+    padding: 70px 0;
+}
+
+.about_world .container {
+    gap: 60px;
+}
+
+.about_world h2 {
+    flex: 1;
+    font-size: 46px;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.world_text {
+    display: flex;
+    flex: 1;
+    border-top: 1px solid #dddddd;
+    padding-top: 25px;
+}
+
+.world_text p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.world_text .small {
+    font-size: 13px;
+    color: #777777;
+}
+
+
+.about_dealers {
+    padding: 60px 0;
+}
+
+.about_dealers h2 {
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.dealers_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dealer_card {
+    background: rgba(46, 46, 46, 1);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.orange {
+    background: rgba(245, 117, 32, 1);
+    color: white;
+    border: 1px solid #e0e0e0;
+}
+
+.black {
+    background-color: black;
+
+}
+
+.dealer_card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.dealer_card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #a5a5a5;
+}
+
+.dealer_card.light p {
+    color: #666666;
+}
+
+.about_call {
+    background-color: #F57520;
+    display: flex;
+
+}
+
+.about_call .container {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.about_call h2 {
+    color: white;
+    font-size: 50px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.call_small {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.call_phone {
+    display: inline-block;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.about_call p {
+    color: white;
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.call_photo {
+    width: 1000px;
+   
+}
+
+.about_team {
+    padding: 70px 0;
+}
+
+.about_team h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    max-width: 900px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.team_row {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.team_text {
+    flex: 1;
+}
+
+.team_text p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.team_subtitle {
+    font-weight: bold;
+}
+
+.team_text ul {
+    padding-left: 20px;
+}
+
+.team_text li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444444;
+}
+
+.team_photo {
+    width: 45%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.about_gallery {
+    padding-bottom: 70px;
+}
+
+.about_gallery h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.gallery_row {
+    display: flex;
+    gap: 40px;
+}
+
+.gallery_row img {
+    border-radius: 10px;
+    width: 20%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.about_contacts {
+    padding-top: 30px;
+}
+
+.about_contacts h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.map {
+    width: 100%;
+    height: 380px;
+    background-color: #ececec;
+    color: #999999;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 80px;;
+}
+
+.contact_list {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.contact p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.contact_title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 1024px) {
+    .about_intro h2 {
+        font-size: 36px;
+    }
+
+    .about_world h2 {
+        font-size: 36px;
+    }
+
+    .about_call h2 {
+        font-size: 38px;
+    }
+
+    .call_photo {
+        width: 300px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 900px) {
+    .intro_cards {
+        flex-direction: column;
+    }
+
+    .about_world .container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .world_text {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .dealers_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team_row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .team_photo {
+        width: 100%;
+        height: 280px;
+    }
+
+    .about_call {
+        flex-direction: column;
+    }
+
+    .call_photo {
+        width: 100%;
+        height: 300px;
+    }
+
+    .about_story h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 700px) {
+    .about_hero h1 {
+        font-size: 40px;
+    }
+
+    .about_intro h2 {
+        font-size: 26px;
+    }
+
+    .about_world h2 {
+        font-size: 26px;
+    }
+
+    .about_dealers h2 {
+        font-size: 24px;
+    }
+
+    .about_gallery h2 {
+        font-size: 24px;
+    }
+
+    .about_team h2 {
+        font-size: 24px;
+    }
+
+    .about_contacts h2 {
+        font-size: 24px;
+    }
+
+    .about_intro {
+        padding: 40px 0;
+    }
+
+    .about_world {
+        padding: 40px 0;
+    }
+
+    .about_dealers {
+        padding: 40px 0;
+    }
+
+    .about_team {
+        padding: 40px 0;
+    }
+
+
+    .about_photo img {
+        height: 240px;
+    }
+
+    .gallery_row {
+        flex-wrap: wrap;
+    }
+
+    .gallery_row img {
+        width: 31%;
+        height: 110px;
+    }
+
+    .contact_list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .map {
+        height: 260px;
+    }
+
+    .news_form {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .about_news h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about_call h2 {
+        font-size: 30px;
+    }
+
+    .call_phone {
+        font-size: 24px;
+    }
+
+    .gallery_row img {
+        width: 47%;
+    }
+}

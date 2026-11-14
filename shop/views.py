@@ -5,7 +5,6 @@ from django.core.paginator import Paginator
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import login_required
 
 
 
@@ -909,3 +908,7 @@ def account_wishlist(request):
             })
 
     return render(request, 'account_wishlist.html', {'items': items})
+
+
+def about_view(request):
+    return render(request, 'about.html')

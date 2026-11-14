@@ -58,6 +58,8 @@ urlpatterns = [
     path('trade-in/equipment/', views.trade_in_equipment, name='trade_in_equipment'),
     path('trade-in/accessories/', views.trade_in_accessories, name='trade_in_accessories'),
     path('trade-in/bike-trainers/', views.trade_in_bike_trainers, name='trade_in_bike_trainers'),
+    
+    path('about/', views.about_view, name='about'),
 ]
 
 

@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}О нас{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'static_css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="about_hero">
+    <div class="container">
+        <p class="breadcrumbs">
+            <a href="{% url 'home' %}">Главная</a> / О нас
+        </p>
+        <h1>О нас</h1>
+    </div>
+</section>
+
+<section class="about_intro">
+    <div class="container">
+        <h2><span class="orange">Велосипед</span> — это не просто средство
+            передвижения!</h2>
+
+        <div class="intro_cards">
+            <div class="intro_card">
+                <h3>Веломастерская</h3>
+                <p>Ремонт и обслуживание велосипедов любой сложности. Наши
+                    механики соберут, настроят и подготовят ваш велосипед к
+                    новому сезону.</p>
+                <a href="#">Подробнее</a>
+            </div>
+
+            <div class="intro_card">
+                <h3>Хранение</h3>
+                <p>Оставим ваш велосипед на хранение в тёплом помещении. Можно
+                    сдать велосипед на зиму и забрать его уже готовым к
+                    поездке.</p>
+                <a href="#">Подробнее</a>
+            </div>
+
+            <div class="intro_card">
+                <h3>Гарантии</h3>
+                <p>На все товары в магазине действует официальная гарантия
+                    производителя. Мы всегда поможем решить гарантийный
+                    вопрос.</p>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about_story">
+
+    <div class="container">
+        <h2>Несколько слов о нас и нашем деле</h2>
+
+        <p>Велосипед — это не просто средство передвижения. Мы, команда
+            World-Bike, уверены в этом. Для нас велосипед — это целая жизнь,
+            полная свободы, драйва, приключений и новых открытий.</p>
+
+        <p>Мы искренне любим своё дело и стараемся, чтобы и для вас велосипед
+            стал неотъемлемой частью жизни.</p>
+
+        <div class="socials">
+            <a href="#">OK</a>
+            <a href="#">VK</a>
+            <a href="#">TG</a>
+            <a href="#">VB</a>
+            <a href="#">WA</a>
+        </div>
+    </div>
+
+    <div class="img_bike">
+        <img class="bike_man" src="{% static 'img/Rectangle 168 (1).png' %}"
+            alt="Велосипед">
+    </div>
+</section>
+
+<section class="about_world">
+    <div class="container">
+        <h2>Мы собрали для вас лучшее<br>из велосипедного мира</h2>
+
+        <div class="world_text">
+            <p>World-Bike специализируется на продаже и обслуживании
+                велосипедов, запчастей, аксессуаров для них и экипировки.</p>
+
+            <p class="small">Мы знаем цену качеству. Поэтому в World-Bike только
+                качественные премиальные товары по соответствующим ценам. А под
+                заказ мы соберём для вас кастомный велосипед с уникальным
+                дизайном и техническими характеристиками!</p>
+        </div>
+    </div>
+
+    <img src="{% static 'img/Rectangle 169 (1).png' %}" alt="Велосипед">
+</section>
+
+<section class="about_dealers">
+    <div class="container">
+        <h2>Мы — официальные<br>дилеры лучших брендов:</h2>
+
+        <div class="dealers_grid">
+            <div class="dealer_card">
+                <h3>Велосипеды</h3>
+                <p>BMC
+                    Cervelo
+                    Cipollini
+                    Colnago
+                    Early Rider
+                    Giant
+                    Look
+                    Orbea
+                    Pinarello
+                    Scott
+                    Wilier
+                    Officine Mattio
+                </p>
+            </div>
+
+            <div class="dealer_card orange">
+                <h3>Запчасти</h3>
+                <p>Campagnolo
+                    Lightweight
+                    Shimano
+                    Mavic
+                    Fox
+                    Continental
+                    Vittoria
+                    Tufo
+                    Easton
+                    Astute
+                    Sram
+                    Rohloff
+                    3T
+                </p>
+            </div>
+
+            <div class="dealer_card black">
+                <h3>Аксессуары</h3>
+                <p>SKS
+                    Selle Royal
+                    Elite
+                    Crank Brothers
+                    Scicon
+                    Garmin
+                    Look
+                    Wellgo
+                    Pedros
+                    Fizik
+                    Blackburn
+                    Sigma sport
+                    Tacx
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about_call">
+    <div class="container">
+        <h2>Остались<br>вопросы?</h2>
+        <p class="call_small">Позвоните нам по номеру</p>
+        <a class="call_phone" href>+7 (495) 055-75-86</a>
+        <p>Мы к вашим услугам! И, конечно же, приходите в наш магазин, чтобы
+            посмотреть товары вживую, лично оценить качество и сделать
+            правильный выбор!</p>
+    </div>
+
+    <img class="call_photo" src="{% static 'img/image 65 (1).png' %}"
+        alt="Велосипедист">
+</section>
+
+<section class="about_team">
+    <div class="container">
+        <h2>World-Bike — это в первую очередь команда!</h2>
+
+        <div class="team_row">
+            <div class="team_text">
+                <p>Все наши сотрудники — это бывшие профессиональные
+                    велосипедисты, чемпионы и призёры соревнований Европы и
+                    России, участники отечественной сборной. Не сомневайтесь,
+                    если кто-то и способен предоставить вам по-настоящему
+                    профессиональную консультацию, то это они.</p>
+
+                <p class="team_subtitle">Консультанты World-Bike помогут вам в
+                    любом вопросе:</p>
+
+                <ul>
+                    <li>подберём велосипед под ваш рост и стиль катания;</li>
+                    <li>расскажем об отличиях моделей и компонентов;</li>
+                    <li>поможем с выбором экипировки и аксессуаров;</li>
+                    <li>запишем на тест-драйв и в веломастерскую.</li>
+                </ul>
+            </div>
+
+            <img class="team_photo"
+                src="{% static 'img/Rectangle 170 (1).png' %}"
+                alt="Команда World-Bike">
+        </div>
+    </div>
+</section>
+
+<section class="about_gallery">
+    <div class="container">
+        <h2>Фотогалерея</h2>
+
+        <div class="gallery_row">
+            <img src="{% static 'img/Frame 349 (1).png' %}" alt="Велосипед">
+            <img src="{% static 'img/Frame 350 (1).png' %}" alt="Велосипед">
+            <img src="{% static 'img/Frame 351 (1).png' %}" alt="Велостанок">
+            <img src="{% static 'img/Frame 352 (1).png' %}" alt="Аксессуар">
+            <img src="{% static 'img/Frame 353.png' %}" alt="Запчасть">
+        </div>
+    </div>
+</section>
+
+<section class="about_contacts">
+    <div class="container">
+        <h2>Контакты</h2>
+    </div>
+
+    <div class="map">
+        <img src="{% static 'img/map.png' %}" alt>
+    </div>
+
+    <div class="container">
+        <div class="contact_list">
+            <div class="contact">
+                <p class="contact_title">Адрес магазина:</p>
+                <p>г. Москва, ул. Доватора, 7/8 с1</p>
+            </div>
+
+            <div class="contact">
+                <p class="contact_title">Телефон</p>
+                <p>+7 (495) 055-75-86</p>
+                <p>+7 (965) 142-22-99</p>
+            </div>
+
+            <div class="contact">
+                <p class="contact_title">E-mail:</p>
+                <p>order@world-bike.ru - заказы</p>
+                <p>info@world-bike.ru - информация</p>
+                <p>opt@world-bike.ru - опт</p>
+            </div>
+
+            <div class="contact">
+                <p class="contact_title">Юридическая информация:</p>
+                <p>Наименование:
+                    ИП НЕТРЕБИН ВЛАДИСЛАВ ВЯЧЕСЛАВОВИЧ <br>
+                    ИНН:
+                    402573939444 <br>
+                    ОГРН:
+                    317402700004683 <br>
+                    Фактический адрес:
+                    Москва, ул. Доватора, дом 7/8 с1 <br>
+                    Юридический адрес:
+                    Москва, ул. Доватора, дом 7/8 с1 <br>
+                    Расчетный счет:
+                    40802810800000085888 <br>
+                    Банк:
+                    АО «ТИНЬКОФФ БАНК» <br>
+                    Корр.счет:
+                    30101810145250000974 <br>
+                    БИК:
+                    044525974
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section3">
+    <div class="container">
+        <div class="brands">
+            <img src="{% static 'images/spamm.svg' %}" alt="Wahoo">
+            <img src="{% static 'images/Wahoo.svg' %}" alt="Topeak">
+            <img src="{% static 'images/spamm.svg' %}" alt="SRAM">
+            <img src="{% static 'images/Wahoo.svg' %}" alt="SRAM">
+            <img src="{% static 'images/spamm.svg' %}" alt="SRAM">
+            <img src="{% static 'images/Wahoo.svg' %}" alt="SRAM">
+
+        </div>
+    </div>
+</section>
+<section class="section8">
+    <div class="container">
+        <div class="newsletter_left">
+            <h2>ПОДПИШИТЕСЬ НА НАШИ НОВОСТИ</h2>
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="newsletter_form">
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <button type="submit">Подписаться</button>
+                </div>
+                <label class="checkbox_label">
+                    <input type="checkbox" required>
+                    Согласен(на) на обработку персональных данных
+                </label>
+            </form>
+        </div>
+        <div class="newsletter_img">
+            <img src="{% static 'images/newsletter_bike.png' %}" alt="">
+        </div>
+    </div>
+</section>  
+
+<a href="#" class="up_button">&#8593;</a>
+
+{% endblock %}
